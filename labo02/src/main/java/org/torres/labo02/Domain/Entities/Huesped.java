@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.torres.labo02.Domain.Entities.DTO.CreateHuespedDTO;
 
 import java.util.Date;
 
@@ -32,4 +33,11 @@ public class Huesped {
     private String password;
 
 
+    public Huesped(CreateHuespedDTO new_Huesped){
+        this.nombre = new_Huesped.getNombre();
+        this.apellido = new_Huesped.getApellido();
+        this.fechaNacimiento = new_Huesped.getFechaNacimiento();
+        this.email = new_Huesped.getEmail();
+        this.password = new_Huesped.getPassword();
+    }
 }
