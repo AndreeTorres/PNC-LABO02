@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Transactional
-public interface iHuespedRepository extends JpaRepository<Huesped, UUID> {
+public interface iHuespedRepository extends iGenericRepository<Huesped, UUID> {
 
     @Query(value = "SELECT h FROM Huesped h")
     public List<Huesped> getAllHuespedes();
