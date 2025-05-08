@@ -4,10 +4,12 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.torres.labo02.Domain.Entities.Salon;
 
+import java.util.List;
 import java.util.UUID;
 
 public interface iSalonRepository extends iGenericRepository<Salon, UUID> {
 
+    List<Salon> findAll();
 
     @Query(value = "SELECT s FROM Salon s WHERE s.salon_id = :salon_id")
     public Salon findSalonBySalon_id(@Param("salon_id") UUID salon_id);

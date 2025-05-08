@@ -5,10 +5,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.torres.labo02.Domain.Entities.Piso;
 
+import java.util.List;
 import java.util.UUID;
 
 @Transactional
 public interface iPisoRepository extends iGenericRepository<Piso, UUID> {
+
+    List<Piso> findAll();
 
     @Query(value = "SELECT p FROM Piso p WHERE p.sucursal = :sucursalId")
     public Piso getPisoBySucursalId(@Param("sucursalId") UUID sucursalId);

@@ -11,6 +11,8 @@ import java.util.UUID;
 @Transactional
 public interface iHabitacionRepository extends iGenericRepository<Habitacion, UUID>{
 
+    List<Habitacion> findAll();
+
     @Query(value = "SELECT h FROM Habitacion h WHERE h.piso = :pisoId")
     public List<Habitacion> findHabitacionByPiso(@Param("pisoId") UUID pisoId);
 
