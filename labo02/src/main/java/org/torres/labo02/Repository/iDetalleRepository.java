@@ -8,6 +8,8 @@ import java.util.UUID;
 
 public interface iDetalleRepository extends iGenericRepository<Detalle, UUID> {
 
+    List<Detalle> findAll();
+
     @Query(value = "SELECT d FROM Detalle d")
     public List<Detalle> getAllDetalles(UUID id);
 

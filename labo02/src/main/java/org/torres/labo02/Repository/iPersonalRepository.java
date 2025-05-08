@@ -10,6 +10,7 @@ import java.util.UUID;
 public interface iPersonalRepository extends iGenericRepository<Personal, UUID> {
 
 
+
     @Query(value = "SELECT p FROM Personal p WHERE p.nombre = :nombre")
     public List<Personal> getPersonalsByNombre(@Param("nombre") String nombre);
 

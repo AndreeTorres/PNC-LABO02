@@ -9,6 +9,7 @@ import java.util.UUID;
 
 public interface iTurnoRepository extends iGenericRepository<Turno, UUID> {
 
+    List<Turno> findAll();
 
     @Query(value = "SELECT t FROM Turno t WHERE t.turno = :turno")
     public List<Turno> getAllByTurno(@Param("turno") String turno);

@@ -9,6 +9,8 @@ import java.util.UUID;
 
 public interface iOrdenTrabajoRepository extends iGenericRepository<OrdenTrabajo, UUID> {
 
+    List<OrdenTrabajo> findAll();
+
     @Query(value = "SELECT o FROM OrdenTrabajo o WHERE o.personal = :personal_id")
     public List<OrdenTrabajo> getOrdenTrabajoByPersonal(@Param("personal_id") UUID personal_id);
 

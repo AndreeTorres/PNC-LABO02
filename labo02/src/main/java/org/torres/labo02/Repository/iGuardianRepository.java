@@ -10,6 +10,7 @@ import java.util.UUID;
 
 public interface iGuardianRepository extends iGenericRepository<Guardian, UUID> {
 
+    List<Guardian> findAll();
 
     @Query(value = "SELECT g FROM Guardian g WHERE g.activo = true")
     public List<Guardian> findActiveGuardians();

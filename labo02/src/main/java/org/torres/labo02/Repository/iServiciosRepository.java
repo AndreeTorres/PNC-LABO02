@@ -9,6 +9,8 @@ import java.util.UUID;
 
 public interface iServiciosRepository extends iGenericRepository<Servicios, UUID> {
 
+    List<Servicios> findAll();
+
     @Query(value = "SELECT s FROM Servicios s WHERE s.departamento = :departamento")
     public List<Servicios> getAllByDepartamento(@Param("departamento") String departamento);
 

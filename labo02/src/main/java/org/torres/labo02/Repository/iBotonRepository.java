@@ -8,6 +8,8 @@ import java.util.UUID;
 
 public interface iBotonRepository extends iGenericRepository<Boton, UUID> {
 
+    public List<Boton> findAll();
+
     @Query(value = "SELECT b FROM Boton b")
     public List<Boton> getBotonByNombreBoton(String nombreBoton);
 

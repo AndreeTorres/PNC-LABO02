@@ -9,6 +9,7 @@ import java.util.UUID;
 
 public interface iHuespedXHabitacionRepository extends iGenericRepository<HuespedXHabitacion, UUID> {
 
+    List<HuespedXHabitacion> findAll();
 
     @Query(value = "SELECT hxh  FROM HuespedXHabitacion hxh WHERE hxh.huesped = :huesped_id")
     public List<HuespedXHabitacion> getHuespedXHabitacionByHuesped(@Param("huesped_id") UUID huesped_id);

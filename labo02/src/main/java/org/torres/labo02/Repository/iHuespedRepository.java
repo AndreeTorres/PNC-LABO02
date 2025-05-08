@@ -13,8 +13,7 @@ import java.util.UUID;
 @Transactional
 public interface iHuespedRepository extends iGenericRepository<Huesped, UUID> {
 
-    @Query(value = "SELECT h FROM Huesped h")
-    public List<Huesped> getAllHuespedes();
+    List<Huesped> findAll();
 
 
     @Query(value = "SELECT h FROM Huesped h WHERE h.huesped_id = :id")
