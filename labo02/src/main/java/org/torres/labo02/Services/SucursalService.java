@@ -10,6 +10,10 @@ public class SucursalService {
 
     private iSucursalRepository sucursalRepository;
 
+    public void createSucursal(Sucursal sucursal) {
+        sucursalRepository.save(sucursal);
+    }
+
     public List<Sucursal> findAllSucursal() {
         return sucursalRepository.findAll();
     }
